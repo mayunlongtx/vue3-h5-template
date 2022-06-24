@@ -1,0 +1,41 @@
+@import "./reset.scss";
+
+.overflow {
+  overflow:hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -o-text-overflow:ellipsis;
+}
+.nodata{
+  font-size: 20px;
+  font-weight: 400;
+  color: #3790C7;
+  line-height: 28px;
+  padding: 20px 0;
+  img {
+    width: 136px;
+  }
+  p{
+    font-size: 13px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 19px;
+  }
+}
+.center{
+  text-align: center;
+}
+
+.mb-10{
+  margin-bottom: 10px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}

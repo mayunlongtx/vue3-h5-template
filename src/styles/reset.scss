@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  // height: calc(100vh - 80px);
+  width: 100%;
+}
+// 去除百度地图角标
+.anchorBL {
+  display: none !important;
+}
+
+:root {
+  --van-nav-bar-icon-color: #000;
+  --van-nav-bar-text-color: #000;
+  --van-sidebar-active-color: #FF9542;
+  --van-sidebar-selected-border-color: #FF9542;
+  --van-badge-background-color: #fd452b;
+  --van-action-bar-icon-text-color: #FF9542;
+  --van-tree-select-item-active-color: #FF9542;
+  --van-tabbar-item-active-color: #FF9542;
+  --van-submit-bar-text-color: #000;
+  --van-submit-bar-price-color: #FF9542;
+  // --van-tabs-nav-background-color: #FF9542;
+  --van-tabs-bottom-bar-color: #FF9542;
+  --van-tab-active-text-color: #323233;
+  --van-tab-text-color: #969799;
+}
+// 添加自定义字体
+@font-face {
+  font-family: SHISHANGZHONGHEIJIANTI;
+  /* 重命名字体名 */
+  src: url('./fonts/SHISHANGZHONGHEIJIANTI.TTF');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,76 @@
+.van-cell-group--inset {
+  margin-top: 15px;
+  border: 1px solid #dadada;
+}
+.van-sidebar {
+  width: 100%;
+}
+.service-label {
+  font-size: 14px;
+}
+.service-container {
+  // margin: 20px 0;
+  display: flex;
+  height: calc(100vh - 340px);
+  .service-type {
+    width: 25%;
+    height: 71vh;
+    overflow: auto;
+  }
+  .service-info {
+    width: 75%;
+    height: 71vh;
+    overflow: auto;
+  }
+}
+#actionBar {
+  z-index: 7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.text {
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0 20px;
+  width: 20vw;
+}
+.car-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.5);
+}
+.car-container_info {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: calc(100vw - 40px);
+  background-color: #fff;
+  height: 280px;
+  z-index: 6;
+  padding: 10px 20px;
+  border-radius: 20px 20px 0 0;
+  .car-card_list {
+    height: 80%;
+    overflow: auto;
+    padding: 10px 0;
+  }
+  .shopping-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 10px 0;
+    .clear-all {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+.project-name {
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: 1px;
+}
