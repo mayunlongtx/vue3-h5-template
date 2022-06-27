@@ -31,7 +31,6 @@
         <van-button block type="primary" @click="onSubmit" :disabled="isDisabled">
           登录
         </van-button>
-
       </div>
     </div>
   </div>
@@ -39,7 +38,7 @@
 
 <script setup lang="ts">
   import { ref, onMounted, watch } from 'vue';
-  import { useRouter,useRoute } from 'vue-router';
+  import { useRouter, useRoute } from 'vue-router';
   import { Notify } from 'vant';
   import { setToken, setUser, getUser, removeLocalStorage, jumpIndexPath, setDev } from '@/utils';
   import { login, currentInfo } from '@/api/Login';
@@ -64,6 +63,9 @@
     watch(password, (val) => {
       isDisabled.value = !(val && username.value);
     });
+    setTimeout(() => {
+      username.value = '110101194203078330';
+    }, 100);
   });
   const onSubmit = () => {
     login({
@@ -72,7 +74,7 @@
       grantType: 'password',
     }).then((res: any) => {
       // console.log(res);
-      setDev(res.data.dev)
+      setDev(res.data.dev);
       setToken(res.data.token);
       getCurrentInfo(res.data);
     });
@@ -86,14 +88,13 @@
   function loginSuccess() {
     Notify({ type: 'success', message: '登录成功' });
     setTimeout(() => {
-      if(typePath && typePath != 'null') {
+      if (typePath && typePath != 'null') {
         router.replace(`/${typePath}`);
-      }else {
+      } else {
         jumpIndexPath(router);
       }
     }, 500);
   }
-  
 </script>
 
 <style lang="scss" scoped>

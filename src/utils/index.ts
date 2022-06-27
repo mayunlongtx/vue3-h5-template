@@ -142,6 +142,14 @@ export function encryptionEmail(email: any) {
   return new_email;
 }
 
+/**
+ *
+ * 合并对象
+ *
+ */
+export function marge(defaultObj: object, newObj: object) {
+  return Object.assign(defaultObj, newObj);
+}
 // 初始化列表搜索条件
 export function initParams(opt: any = {}) {
   return Object.assign(
