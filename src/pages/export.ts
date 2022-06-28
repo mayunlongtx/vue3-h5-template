@@ -32,27 +32,12 @@ Object.keys(modules).forEach((item) => {
   }
   // 判断是不是需要添加 title
   let title = '';
-  if (name == 'middle_page') {
+  if (name == 'index') {
     title = MenuTitle.MIDDLE_PAGE;
   } else {
     switch (name.toLowerCase()) {
-      case 'service/location':
-        title = '我的地址';
-        break;
-      case 'service/order':
-        title = '我的订单';
-        break;
-      case 'personalcenter/coupon':
-        title = '我的优惠券';
-        break;
-      case 'personalcenter/welfare':
-        title = '我的福利';
-        break;
-      case 'personalcenter/relatives':
-        title = '我的亲属';
-        break;
-      case 'personalcenter/appointmentrecord':
-        title = '我的预约';
+      case '':
+        title = '';
         break;
       default:
         title = MenuTitle[firstName.toUpperCase()];

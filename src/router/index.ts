@@ -16,7 +16,6 @@ interface routerType {
   name: string;
 }
 // 白名单
-//  '/',
 const whiteList = [
   LOGIN_PATH,
   LOGIN_OUT_PATH,
