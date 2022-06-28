@@ -1,4 +1,4 @@
-import AllAPi from './AllAPi';
+import AllAPi from '../api/AllAPi';
 import { removeLocalStorage } from '@/utils';
 import { TIMEOUT, OTHER, NOLOGIN } from './error-code';
 import { Notify, Dialog } from 'vant';

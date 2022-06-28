@@ -22,11 +22,11 @@ export default function httpServer(config: any) {
   };
   // 、添加token
   const token = getToken();
-  const nowDev = getDev()
+  const nowDev = getDev();
   if (token) {
     headers.token = `Bearer ${token}`;
   }
-   if (nowDev) {
+  if (nowDev) {
     headers['x-system-env'] = `${nowDev}`;
   }
   // 增加租户编码
@@ -46,7 +46,7 @@ export default function httpServer(config: any) {
       timeout: 10000,
       data: {},
       header: headers,
-      appKey: 'wwjq4o4n+2001908337+qitsvf', // 必须
+      appKey: 'xxx', // 必须
       onSuccess: (data) => {
         // console.log('data---zlb', data.data);
         handleSuccess(data, resolve, config);
