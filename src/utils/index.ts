@@ -150,6 +150,23 @@ export function encryptionEmail(email: any) {
 export function marge(defaultObj: object, newObj: object) {
   return Object.assign(defaultObj, newObj);
 }
+/**
+ * 组合函数
+ * composeRight (参数从右往左)
+ * compose (参数从左往右)
+ *
+ */
+export function composeRight(...fns) {
+  return function (x) {
+    return fns.reduceRight((v, f) => f(v), x);
+  };
+}
+export function compose(...fns) {
+  return function (x) {
+    return fns.reduce((v, f) => f(v), x);
+  };
+}
+
 // 初始化列表搜索条件
 export function initParams(opt: any = {}) {
   return Object.assign(

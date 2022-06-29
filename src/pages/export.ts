@@ -1,4 +1,5 @@
 import { MenuTitle } from '@/enums/menu';
+import { compose, composeRight } from '@/utils';
 
 let moduleFiles = import.meta.globEager('./**/*.vue');
 //   ignore: [],
@@ -60,11 +61,26 @@ Object.keys(modules).forEach((item) => {
  * 2.再根据 / 分割成数组
  * 3.将数组循环改变第一个首字母为大写
  * 4.最后拼接返回
+ * 通过组合函数实现
  * */
+function replace(str: string): string {
+  return str.replace(/[-_]/g, '/');
+}
+function division(str: string): string[] {
+  return str.split('/');
+}
+function toHump(arr: string[]): string {
+  return arr.reduce(
+    (previous, current) => previous + current.replace(/^\w/, (s) => s.toUpperCase()),
+    '',
+  );
+}
+
 function conversionName(name: String) {
-  return name
-    .replace(/[-_]/g, '/')
-    .split('/')
-    .reduce((previous, current) => previous + current.replace(/^\w/, (s) => s.toUpperCase()), '');
+  return composeRight(toHump, division, replace)(name);
+  // return name
+  //   .replace(/[-_]/g, '/')
+  //   .split('/')
+  //   .reduce((previous, current) => previous + current.replace(/^\w/, (s) => s.toUpperCase()), '');
 }
 export default routes;

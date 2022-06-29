@@ -1,14 +1,10 @@
 module.exports = {
   root: true,
-  extends: [
-    'eslint:recommended',
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended'
-  ],
+  extends: ['eslint:recommended', 'plugin:vue/recommended', 'plugin:prettier/recommended'],
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   plugins: ['vue'],
   parserOptions: {
@@ -16,7 +12,7 @@ module.exports = {
     sourceType: 'module',
     allowImportExportEverywhere: false,
     codeFrame: false,
-    requireConfigFile: false
+    requireConfigFile: false,
   },
   rules: {
     // This rule checks whether template contains single root element valid for Vue 2.
@@ -31,8 +27,8 @@ module.exports = {
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
         ignoreRegExpLiterals: true,
-        ignorePattern: 'data:image'
-      }
+        ignorePattern: 'data:image',
+      },
     ],
 
     'no-plusplus': 0,
@@ -53,8 +49,8 @@ module.exports = {
       1,
       {
         ignoreDestructuring: true,
-        properties: 'always'
-      }
+        properties: 'always',
+      },
     ],
     'vue/attributes-order': 0,
     'no-use-before-define': ['error', { functions: false, classes: false }],
@@ -91,14 +87,14 @@ module.exports = {
       {
         line: {
           markers: ['/'],
-          exceptions: ['-', '+']
+          exceptions: ['-', '+'],
         },
         block: {
           markers: ['!'],
           exceptions: ['*'],
-          balanced: true
-        }
-      }
+          balanced: true,
+        },
+      },
     ],
     'switch-colon-spacing': 1,
     'prefer-template': 1,
@@ -106,11 +102,11 @@ module.exports = {
     'vue/multi-word-component-names': [
       0,
       {
-        ignores: []
-      }
-    ]
+        ignores: [],
+      },
+    ],
   },
   globals: {
-    __NUXT__: true
-  }
-}
+    __NUXT__: true,
+  },
+};
