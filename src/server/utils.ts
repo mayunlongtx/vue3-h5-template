@@ -1,4 +1,3 @@
-import AllAPi from '../api/AllAPi';
 import { removeLocalStorage } from '@/utils';
 import { TIMEOUT, OTHER, NOLOGIN } from './error-code';
 import { Notify, Dialog } from 'vant';
@@ -7,14 +6,6 @@ import { isDev } from '@/utils/is';
 // 如果是本地开发环境就跳转到登录页面
 const LOGIN_PATH = isDev() ? '/login' : LOGIN_OUT_PATH;
 
-export function getUrl(key) {
-  console.log(isDev(), 'isDev()');
-  if (isDev()) {
-    return AllAPi[key].dev;
-  } else {
-    return AllAPi[key].prod;
-  }
-}
 // 成功处理函数
 export function handleSuccess(res: any, resolve: Function, opts?: any) {
   let isAlert = opts.custom ? opts.custom['isAlert'] : false;

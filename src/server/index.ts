@@ -1,7 +1,6 @@
-import ZlbHttpServer from './zlb';
 import axiosHttpServer from './axiosServer';
 import { isDev } from '@/utils/is';
 
-let exportServer = ZlbHttpServer;
+let exportServer =axiosHttpServer;
 isDev() && (exportServer = axiosHttpServer);
 export default exportServer;

@@ -46,7 +46,7 @@ Object.keys(modules).forEach((item) => {
     }
   }
   routes.push({
-    path: `/${name == 'middle_page' ? '' : name.toLowerCase()}`, // 这个判断是等于home首页，路径就默认为/ ，toLowerCase是转小写函数
+    path: `/${name == 'index' ? '' : name.toLowerCase()}`, // 这个判断是等于home首页，路径就默认为/ ，toLowerCase是转小写函数
     name: conversionName(name),
     meta: {
       title,

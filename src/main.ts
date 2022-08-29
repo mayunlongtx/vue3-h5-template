@@ -9,11 +9,6 @@ import { registerStore } from '@/store/index';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import directives from './directive/index';
-import '@/styles/care.scss';
-import { isDev, isCare } from './utils/is';
-// import VConsole from 'vconsole';
-console.log(isCare(), 'isCare');
-console.log(isDev(), 'isDev');
 
 // or init with options
 // const vConsole = new VConsole({ theme: 'dark' });

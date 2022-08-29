@@ -3,9 +3,6 @@ import { getToken } from '@/utils/index';
 
 import routes from '../pages/export';
 import { LOGIN_OUT_PATH, LOGIN_PATH, LOGIN_SUCCESS_PATH } from '@/helpers';
-import { trafficAnalysis } from '@/ddConfig';
-import { useSetTitle } from '@/hooks/useZWJSBridge';
-import { isDev } from '@/utils/is';
 console.log(routes);
 const router = createRouter({
   history: createWebHashHistory(),
@@ -25,9 +22,6 @@ const whiteList = [
 let routerStack: string[] = [];
 router.beforeEach((to: any, from: any, next) => {
   // console.log(to, from);
-  if (!isDev()) {
-    useSetTitle(to.meta.title);
-  }
   if (!getToken() && !whiteList.includes(to.path)) {
     next(LOGIN_OUT_PATH);
   } else {

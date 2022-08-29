@@ -1,17 +1,6 @@
-import { useRouter } from 'vue-router';
 import { isObject } from './is';
-import AvatarMan from '@/assets/avatar-man.png';
-import AvatarWomen from '@/assets/avatar-women.png';
-import {
-  LOGIN_SUCCESS_PATH,
-  LOGIN_SUCCESS_RELATIVES_PATH,
-  LOGIN_SUCCESS_SERVICE_PATH,
-} from '@/helpers';
-// import { codeList } from '@/api/Welfare';
 
 const IMG_LIST = [];
-
-// const router = useRouter();
 
 export function getRandomImg() {
   return IMG_LIST[Math.floor(Math.random() * 5)];
@@ -332,82 +321,4 @@ export function getDistance(lng1, lng2, lat1, lat2) {
   s = s * 6378.137; // EARTH_RADIUS;
   s = Math.round(s * 10000) / 10000;
   return s;
-}
-
-/**
- *
- * 根据性别获取默认头像
- *
- */
-export function getAvatarImg(sex?: string) {
-  !sex && (sex = getUser().sex?.code);
-  switch (sex) {
-    case 'M':
-      return AvatarMan;
-    case 'W':
-      return AvatarWomen;
-
-    default:
-      return AvatarMan;
-  }
-}
-
-/**
- *
- * 根据不同角色跳转不同首页
- *
- */
-export function jumpIndexPath(router) {
-  // NURSE 护理人员 、ELDER 老人、 SERVER 服务人员 、OTHER 其他(亲属)
-  var dictionary = [];
-  router.replace(LOGIN_SUCCESS_PATH);
-  // codeList({ types: ['RELATION_TYPE'] }).then((res: any) => {
-  //   if (res.isSuccess) {
-  //     dictionary = res.data.RELATION_TYPE;
-  //     localStorage.setItem('RELATION_TYPE', JSON.stringify(dictionary));
-  //     switch (getUser().currentUserType) {
-  //       case 'ELDER':
-  //         router.replace(LOGIN_SUCCESS_PATH);
-  //         break;
-  //       case 'OTHER':
-  //         router.replace(LOGIN_SUCCESS_RELATIVES_PATH);
-  //         break;
-  //       default:
-  //         router.replace(LOGIN_SUCCESS_SERVICE_PATH);
-  //         break;
-  //     }
-  //   }
-  // });
-}
-
-// 获取亲属关系
-export function getRelationType() {
-  if (localStorage.getItem('RELATION_TYPE')) {
-    return localStorage.getItem('RELATION_TYPE');
-  } else {
-    fetchRelationType();
-  }
-}
-
-// 获取亲属关系
-export function fetchRelationType() {
-  var dictionary = [];
-  codeList({ types: ['RELATION_TYPE'] }).then((res: any) => {
-    if (res.isSuccess) {
-      dictionary = res.data.RELATION_TYPE;
-      localStorage.setItem('RELATION_TYPE', JSON.stringify(dictionary));
-      return JSON.stringify(dictionary);
-    }
-  });
-}
-
-// 获取亲属关系枚举
-export function getRelationTypeEnum() {
-  var relationType_S = getRelationType();
-  var relationType = JSON.parse(relationType_S);
-  var relationTypeEnum = {};
-  relationType.forEach((item) => {
-    relationTypeEnum[item.value] = item.text;
-  });
-  return relationTypeEnum;
 }

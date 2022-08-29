@@ -4,7 +4,7 @@ import qs from 'qs';
 import type { RequestConfig } from './axios/types';
 import { getDev, getTenant, getToken } from '@/utils';
 import { Base64 } from 'js-base64';
-import { getUrl, handleSuccess, handleError } from './utils';
+import { handleSuccess, handleError } from './utils';
 
 export interface CustomResponse<T> {
   statusCode: number;
@@ -78,7 +78,7 @@ const customRequest = <D = any, T = any>(config: CustomRequestConfig<D, T>) => {
   const httpDefaultOpts: any = {
     method,
     baseURL,
-    url: getUrl(config.url),
+    url: config.url,
     responseType: config.responseType || '',
     timeout: (config?.custom && config?.custom['timeout']) || 30000,
   };
