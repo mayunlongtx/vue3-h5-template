@@ -5,6 +5,8 @@ import styleImport, { VantResolve } from 'vite-plugin-style-import';
 import path, { resolve } from 'path';
 import { wrapperEnv } from './compile/vite/utils';
 import { createProxy } from './compile/vite/proxy';
+import { presetUno, presetAttributify, presetIcons } from 'unocss';
+import Unocss from 'unocss/vite';
 function resolvePath(path) {
   return resolve(__dirname, path);
 }
@@ -27,6 +29,9 @@ export default ({ mode, command }) => {
       legacy({ targets: ['chrome 52', 'chrome 53', 'not IE 11'] }),
       styleImport({
         resolves: [VantResolve()],
+      }),
+      Unocss({
+        /* options */ presets: [presetUno(), presetAttributify(), presetIcons()],
       }),
     ],
     build: {

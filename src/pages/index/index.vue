@@ -11,7 +11,7 @@
         }}{{ appStore.roleStore.skill.skillState.unit }}</li
       >
     </ul>
-    <button @click="handleChangeSkill">改变技能</button>
+    <button @click="handleChangeSkill" class="ml-3 bg-green-500">改变技能</button>
   </div>
 </template>
 

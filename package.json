@@ -45,6 +45,7 @@
     "postcss": "^8.4.12",
     "postcss-pxtorem": "^6.0.0",
     "typescript": "^4.5.4",
+    "unocss": "^0.45.13",
     "vite": "^2.9.0",
     "vite-plugin-glob": "^0.2.6",
     "vite-plugin-style-import": "^1.4.1",
