@@ -1,21 +1,31 @@
 <template>
-  <div class="index-container">
+  <div class="index-container p-2">
     {{ count }}
 
-    <div @click="increment">加一</div>
-    <div @click="doubleCount">翻倍</div>
+    <div
+      @click="increment"
+      class="text-2 bg-red w-10 text-center rounded-lg text-white mx-auto my-2 display-inline-block"
+      >加一</div
+    >
+    <div
+      @click="doubleCount"
+      class="text-2 bg-green-500 w-10 text-center rounded-lg text-white mx-auto my-2 display-inline-block"
+      >翻倍</div
+    >
     <van-divider />
 
     <ul>
-      <li class="c-red">名称：{{ appStore.roleStore.skill.skillState.name }}</li>
-      <li
+      <li class="c-red text-2 text-weight-600"
+        >名称：{{ appStore.roleStore.skill.skillState.name }}</li
+      >
+      <li class="c-red text-2 text-weight-600"
         >技能CD：{{ appStore.roleStore.skill.skillState.intervalTime
         }}{{ appStore.roleStore.skill.skillState.unit }}</li
       >
     </ul>
     <button
       @click="handleChangeSkill"
-      class="bg-green-500 p-2 c-white border-none border-radius-15 rounded"
+      class="bg-green-500 c-white border-none border-radius-15 rounded-lg text-2 w-10 py-1"
       >改变技能</button
     >
   </div>
@@ -40,6 +50,6 @@
 
 <style lang="scss" scoped>
   .index-container {
-    height: 100vh;
+    // height: 100vh;
   }
 </style>
