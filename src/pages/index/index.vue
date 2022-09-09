@@ -14,26 +14,29 @@
     >
     <van-divider />
 
-    <ul>
-      <li class="c-red text-2 text-weight-600"
-        >名称：{{ appStore.roleStore.skill.skillState.name }}</li
+    <div>
+      <div class="c-red text-2 text-weight-600"
+        >名称：{{ appStore.roleStore.skill.skillState.name }}</div
       >
-      <li class="c-red text-2 text-weight-600"
+      <div class="c-red text-2 text-weight-600"
         >技能CD：{{ appStore.roleStore.skill.skillState.intervalTime
-        }}{{ appStore.roleStore.skill.skillState.unit }}</li
+        }}{{ appStore.roleStore.skill.skillState.unit }}</div
       >
-    </ul>
+    </div>
     <button
       @click="handleChangeSkill"
       class="bg-green-500 c-white border-none border-radius-15 rounded-lg text-2 w-10 py-1"
       >改变技能</button
     >
+    <!-- 动画 -->
+    <!-- <Animation class="h-100" /> -->
   </div>
 </template>
 
 <script setup lang="ts">
   import { storeToRefs } from 'pinia';
   import appStore from '@/store';
+  import Animation from '@/components/animation/index.vue';
   const { count } = storeToRefs(appStore.useCounterStoreSetup);
   const { increment, doubleCount } = appStore.useCounterStoreSetup;
   console.log(appStore.roleStore.skill.skillState);
