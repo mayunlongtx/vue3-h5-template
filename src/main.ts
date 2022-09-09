@@ -9,6 +9,7 @@ import { registerStore } from '@/store/index';
 import Vant from 'vant';
 import 'vant/lib/index.css';
 import directives from './directive/index';
+import 'uno.css'
 
 // or init with options
 // const vConsole = new VConsole({ theme: 'dark' });

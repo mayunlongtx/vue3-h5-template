@@ -4,14 +4,20 @@
 
     <div @click="increment">加一</div>
     <div @click="doubleCount">翻倍</div>
+    <van-divider />
+
     <ul>
-      <li>名称：{{ appStore.roleStore.skill.skillState.name }}</li>
+      <li class="c-red">名称：{{ appStore.roleStore.skill.skillState.name }}</li>
       <li
         >技能CD：{{ appStore.roleStore.skill.skillState.intervalTime
         }}{{ appStore.roleStore.skill.skillState.unit }}</li
       >
     </ul>
-    <button @click="handleChangeSkill" class="ml-3 bg-green-500">改变技能</button>
+    <button
+      @click="handleChangeSkill"
+      class="bg-green-500 p-2 c-white border-none border-radius-15 rounded"
+      >改变技能</button
+    >
   </div>
 </template>
 

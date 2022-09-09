@@ -31,7 +31,8 @@ export default ({ mode, command }) => {
         resolves: [VantResolve()],
       }),
       Unocss({
-        /* options */ presets: [presetUno(), presetAttributify(), presetIcons()],
+        /* options */
+        presets: [presetUno(), presetAttributify(), presetIcons()],
       }),
     ],
     build: {
