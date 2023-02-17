@@ -34,10 +34,10 @@ router.beforeEach((to: any, from: any, next) => {
       // 这里是前进
       routerStack.push(to.name);
     }
+    document.title = to.meta.title;
     setTimeout(() => {
       next();
     });
-    document.title = to.meta.title;
   }
 });
 export default router;
