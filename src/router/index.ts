@@ -5,7 +5,7 @@ import routes from '../pages/export';
 import { LOGIN_OUT_PATH, LOGIN_PATH, LOGIN_SUCCESS_PATH } from '@/helpers';
 console.log(routes);
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
   routes,
 });
 interface routerType {
@@ -26,20 +26,18 @@ router.beforeEach((to: any, from: any, next) => {
     next(LOGIN_OUT_PATH);
   } else {
     if (to.name === routerStack[routerStack.length - 1]) {
-      // console.log('重复跳转');
       // 这里是后退
       routerStack.pop();
       from.meta.keepAlive = false;
       to.meta.keepAlive = true;
     } else {
-      // console.log('不重复跳转');
       // 这里是前进
       routerStack.push(to.name);
-      // console.log(routerStack);
     }
     setTimeout(() => {
       next();
     });
+    document.title = to.meta.title;
   }
 });
 export default router;

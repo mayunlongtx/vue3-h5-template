@@ -1,9 +1,7 @@
 import { MenuTitle } from '@/enums/menu';
-import { compose, composeRight } from '@/utils';
+import { composeRight } from '@/utils';
 
 let moduleFiles = import.meta.globEager('./**/*.vue');
-//   ignore: [],
-const noTitlePath: string[] = [];
 let modules: any = {};
 let routes: any = [];
 
@@ -32,19 +30,7 @@ Object.keys(modules).forEach((item) => {
     name = name.substr(0, lastInd);
   }
   // 判断是不是需要添加 title
-  let title = '';
-  if (name == 'index') {
-    title = MenuTitle.MIDDLE_PAGE;
-  } else {
-    switch (name.toLowerCase()) {
-      case '':
-        title = '';
-        break;
-      default:
-        title = MenuTitle[firstName.toUpperCase()];
-        break;
-    }
-  }
+  const  title = modules[item].pageTitle || MenuTitle.DEFAULT_TITLE;
   routes.push({
     path: `/${name == 'index' ? '' : name.toLowerCase()}`, // 这个判断是等于home首页，路径就默认为/ ，toLowerCase是转小写函数
     name: conversionName(name),

@@ -37,6 +37,11 @@
   import { storeToRefs } from 'pinia';
   import appStore from '@/store';
   import Animation from '@/components/animation/index.vue';
+
+  defineOptions({
+    pageTitle: 'example'
+  })
+
   const { count } = storeToRefs(appStore.useCounterStoreSetup);
   const { increment, doubleCount } = appStore.useCounterStoreSetup;
   console.log(appStore.roleStore.skill.skillState);

@@ -7,6 +7,8 @@ import { wrapperEnv } from './compile/vite/utils';
 import { createProxy } from './compile/vite/proxy';
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
+import DefineOptions from 'unplugin-vue-define-options/vite'
+
 function resolvePath(path) {
   return resolve(__dirname, path);
 }
@@ -15,7 +17,7 @@ export default ({ mode, command }) => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
-  const { VITE_PROXY, VITE_PORT } = viteEnv;
+  const { VITE_PROXY, VITE_PORT, VITE_PUBLIC_PATH } = viteEnv;
 
   console.log('mode=%s, root=%s, env=%s', mode, root, env);
   // console.log(createProxy(VITE_PROXY));
@@ -23,7 +25,7 @@ export default ({ mode, command }) => {
   // const isBuild = command === 'build';
   return defineConfig({
     // 静态资源基础路径 base: './' || '',
-    base: process.env.NODE_ENV === 'production' ? './' : '/',
+    base: VITE_PUBLIC_PATH,
     plugins: [
       vue(),
       legacy({ targets: ['chrome 52', 'chrome 53', 'not IE 11'] }),
@@ -34,6 +36,7 @@ export default ({ mode, command }) => {
         /* options */
         presets: [presetUno(), presetAttributify(), presetIcons()],
       }),
+      DefineOptions()
     ],
     build: {
       outDir: 'build',
@@ -54,7 +57,7 @@ export default ({ mode, command }) => {
       },
     },
     server: {
-      open: true,
+      open: false,
       host: '0.0.0.0',
       port: VITE_PORT,
       strictPort: false,
