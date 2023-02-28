@@ -1,9 +1,5 @@
 import { MenuTitle } from '@/enums/menu';
-<<<<<<< HEAD
 import { composeRight } from '@/utils';
-=======
-import {  composeRight } from '@/utils';
->>>>>>> 79c7133 (fix: 优化路由菜单配置、增加页面title配置功能)
 
 let moduleFiles = import.meta.globEager('./**/*.vue');
 let modules: any = {};
