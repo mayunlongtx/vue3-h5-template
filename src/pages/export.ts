@@ -1,5 +1,9 @@
 import { MenuTitle } from '@/enums/menu';
+<<<<<<< HEAD
 import { composeRight } from '@/utils';
+=======
+import {  composeRight } from '@/utils';
+>>>>>>> 79c7133 (fix: 优化路由菜单配置、增加页面title配置功能)
 
 let moduleFiles = import.meta.globEager('./**/*.vue');
 let modules: any = {};
@@ -30,7 +34,15 @@ Object.keys(modules).forEach((item) => {
     name = name.substr(0, lastInd);
   }
   // 判断是不是需要添加 title
-  const  title = modules[item].pageTitle || MenuTitle.DEFAULT_TITLE;
+  // 判断是不是需要添加 title
+  let title = modules[item].pageTitle;
+  console.log(modules[item].pageTitle);
+  // 这里是配置整个模块  
+  if(!modules[item].pageTitle) {
+    title = MenuTitle[firstName.toUpperCase()] || MenuTitle.DEFAULT
+  }
+  console.log(title);
+
   routes.push({
     path: `/${name == 'index' ? '' : name.toLowerCase()}`, // 这个判断是等于home首页，路径就默认为/ ，toLowerCase是转小写函数
     name: conversionName(name),

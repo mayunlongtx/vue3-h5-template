@@ -16,12 +16,10 @@ interface routerType {
 const whiteList = [
   LOGIN_PATH,
   LOGIN_OUT_PATH,
-  '/temporary/face',
   ...routes.map((item: routerType) => item.path),
 ];
 let routerStack: string[] = [];
 router.beforeEach((to: any, from: any, next) => {
-  // console.log(to, from);
   if (!getToken() && !whiteList.includes(to.path)) {
     next(LOGIN_OUT_PATH);
   } else {

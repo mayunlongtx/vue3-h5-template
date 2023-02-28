@@ -36,15 +36,13 @@
 <script setup lang="ts">
   import { storeToRefs } from 'pinia';
   import appStore from '@/store';
-  import Animation from '@/components/animation/index.vue';
-
-  defineOptions({
-    pageTitle: 'example'
-  })
-
   const { count } = storeToRefs(appStore.useCounterStoreSetup);
   const { increment, doubleCount } = appStore.useCounterStoreSetup;
   console.log(appStore.roleStore.skill.skillState);
+  // 这里可以配置页面title
+  defineOptions({
+    pageTitle: '示例页面',
+  });
   function handleChangeSkill() {
     appStore.roleStore.changeProfession({
       kill: {

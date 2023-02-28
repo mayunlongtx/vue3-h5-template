@@ -8,7 +8,6 @@ import { createProxy } from './compile/vite/proxy';
 import { presetUno, presetAttributify, presetIcons } from 'unocss';
 import Unocss from 'unocss/vite';
 import DefineOptions from 'unplugin-vue-define-options/vite'
-
 function resolvePath(path) {
   return resolve(__dirname, path);
 }
@@ -36,7 +35,7 @@ export default ({ mode, command }) => {
         /* options */
         presets: [presetUno(), presetAttributify(), presetIcons()],
       }),
-      DefineOptions()
+      DefineOptions(),
     ],
     build: {
       outDir: 'build',
