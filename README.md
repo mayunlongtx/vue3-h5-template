@@ -41,7 +41,7 @@ pnpm install
 - 运行
 
 ```bash
-pnpm serve
+pnpm dev
 ```
 
 - 打包
