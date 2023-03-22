@@ -1,7 +1,6 @@
 import { defineConfig, loadEnv } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 import vue from '@vitejs/plugin-vue';
-import styleImport, { VantResolve } from 'vite-plugin-style-import';
 import path, { resolve } from 'path';
 import { wrapperEnv } from './compile/vite/utils';
 import { createProxy } from './compile/vite/proxy';
@@ -28,9 +27,6 @@ export default ({ mode, command }) => {
     plugins: [
       vue(),
       legacy({ targets: ['chrome 52', 'chrome 53', 'not IE 11'] }),
-      styleImport({
-        resolves: [VantResolve()],
-      }),
       Unocss({
         /* options */
         presets: [presetUno(), presetAttributify(), presetIcons()],

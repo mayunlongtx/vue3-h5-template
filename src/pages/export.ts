@@ -30,9 +30,7 @@ Object.keys(modules).forEach((item) => {
     name = name.substr(0, lastInd);
   }
   // 判断是不是需要添加 title
-  // 判断是不是需要添加 title
   let title = modules[item].pageTitle;
-  console.log(modules[item].pageTitle);
   // 这里是配置整个模块  
   if(!modules[item].pageTitle) {
     title = MenuTitle[firstName.toUpperCase()] || MenuTitle.DEFAULT

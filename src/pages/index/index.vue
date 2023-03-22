@@ -35,6 +35,7 @@
 
 <script setup lang="ts">
   import { storeToRefs } from 'pinia';
+  import { showToast } from 'vant';
   import appStore from '@/store';
   const { count } = storeToRefs(appStore.useCounterStoreSetup);
   const { increment, doubleCount } = appStore.useCounterStoreSetup;
@@ -44,6 +45,7 @@
     pageTitle: '示例页面',
   });
   function handleChangeSkill() {
+    showToast('。。。')
     appStore.roleStore.changeProfession({
       kill: {
         name: '新技能',

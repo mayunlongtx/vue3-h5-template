@@ -1,4 +1,4 @@
-import { Toast } from 'vant';
+import { showToast } from 'vant';
 
 export interface TimeItem {
   id: string;
@@ -60,7 +60,7 @@ export function useRecentlyDay(config?: ConfigType) {
       }
       const weekDay = nowDay;
       let { week } = getNowTime(`${nowYear}-${nowMonth}-${addZero(weekDay)}`);
-      // Toast({
+      // showToast({
       //   message: `${nowYear}-${nowMonth}-${addZero(nowDay)}`,
       //   duration: 0,
       // });
@@ -115,7 +115,7 @@ export function useRecentlyDay(config?: ConfigType) {
   // 计算今天、明天、后天
   function calculateDayName(nowDay: number, week: number, showWeek: boolean = true, value?: any) {
     const { day } = getNowTime();
-    // Toast({
+    // showToast({
     //   message: `${nowDay} ${week}`,
     //   duration: 0,
     // })

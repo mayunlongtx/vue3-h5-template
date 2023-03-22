@@ -1,12 +1,12 @@
 import { createApp } from 'vue';
 import router from './router/index';
-import 'vant/lib/index.css';
 import './styles/index.scss';
 import 'amfe-flexible';
 import App from './App.vue';
 import { createPinia } from 'pinia';
 import { registerStore } from '@/store/index';
 import Vant from 'vant';
+// 2. 引入组件样式
 import 'vant/lib/index.css';
 import directives from './directive/index';
 import 'uno.css'
@@ -17,6 +17,6 @@ const app = createApp(App);
 // directives.install(app);
 app.use(createPinia());
 registerStore();
-app.use(router).use(directives).use(Vant);
+app.use(router).use(directives).use(Vant)
 
 app.mount('#app');
