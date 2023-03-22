@@ -27,12 +27,12 @@
 - 获取项目代码
 
 ````bash
-git clone https://github.com/mayunlongtx/cliTemplate.git
+git clone https://github.com/mayunlongtx/vue3-h5-template.git
 
 - 安装依赖
 
 ```bash
-cd cliTemplate
+cd vue3-h5-template
 
 pnpm install
 
