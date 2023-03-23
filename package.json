@@ -11,7 +11,9 @@
     "build:test": "cross-env NODE_ENV=test vite build --mode test && esno ./compile/script/postBuild.ts",
     "builddev": "vite build && esno ./compile/script/postBuild.ts",
     "buildprod": "cross-env NODE_ENV=production vite build && esno ./compile/script/postBuild.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@aligov/jssdk-mgop": "^3.1.9",
@@ -19,6 +21,7 @@
     "Base64": "^1.1.0",
     "amfe-flexible": "^2.2.1",
     "axios": "^0.26.1",
+    "dayjs": "^1.11.7",
     "docx-preview": "^0.1.9",
     "js-base64": "^3.7.2",
     "pinia": "^2.0.14",
@@ -50,6 +53,7 @@
     "vite": "^4.2.0",
     "vite-plugin-glob": "^0.2.6",
     "vite-plugin-style-import": "^1.4.1",
+    "vitest": "^0.29.7",
     "vue-tsc": "^0.29.8"
   }
 }

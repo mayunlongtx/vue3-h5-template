@@ -45,7 +45,7 @@
     pageTitle: '示例页面',
   });
   function handleChangeSkill() {
-    showToast('。。。')
+    showToast('。。。');
     appStore.roleStore.changeProfession({
       kill: {
         name: '新技能',
@@ -54,6 +54,27 @@
       },
     });
   }
+
+  function enhancer(name: string) {
+    return function enhancer(target: any) {
+      target.prototype.name = name;
+      target.prototype.age = '18';
+    };
+  }
+  interface Calculate {
+    name: string;
+    age: string | number;
+  }
+
+  @enhancer('笑笑')
+  class Calculate {
+    constructor() {}
+    subtraction() {
+      console.log(this.name);
+    }
+  }
+  const operate = new Calculate();
+  operate.subtraction();
 </script>
 
 <style lang="scss" scoped>

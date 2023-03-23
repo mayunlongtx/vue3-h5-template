@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true,
+    "experimentalDecorators": true, // 装饰器
     "lib": [
       "dom",
       "esnext"
