@@ -29,10 +29,13 @@
     ],
     "removeComments": true,
     "paths": {
-      "@/*": ["src/*"],
-      "/#/*": ["types/*"]
+      "@/*": [
+        "src/*"
+      ],
+      "/#/*": [
+        "types/*"
+      ]
     },
-    "types": ["unplugin-vue-define-options/macros-global" /* ... */]
   },
   "include": [
     "tests/**/*.ts",
