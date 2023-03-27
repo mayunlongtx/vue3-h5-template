@@ -13,11 +13,11 @@ export function useTime(opts?: ConfigType) {
   generate(config.interval);
   /**
    * 生成时间往后天数
-   * @param day number | string 需要生成的天数
+   * @param dayNum number | string 需要生成的天数
    */
-  function generate(day?: number) {
-    day = day || 7;
-    for (let i = 0; i < day; i++) {
+  function generate(dayNum?: number) {
+    dayNum = dayNum || 7;
+    for (let i = 0; i < dayNum; i++) {
       const dayAdd = dayjs(config.startTime).add(i, 'day');
       const D = dayAdd.format('YYYY-MM-DD');
       let H = Number(dayjs().format('hh'));
@@ -32,10 +32,10 @@ export function useTime(opts?: ConfigType) {
           H += 1;
         }
         if (H <= 19 - 3) {
-          days.value.push(generateDays(dayAdd, Number(day), config));
+          days.value.push(generateDays(dayAdd, D, config));
         }
       } else {
-        days.value.push(generateDays(dayAdd, Number(day), config));
+        days.value.push(generateDays(dayAdd, D, config));
       }
     }
   }
