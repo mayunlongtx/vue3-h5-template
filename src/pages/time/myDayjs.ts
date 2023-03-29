@@ -23,10 +23,8 @@ export function generateDays(dayAdd: Dayjs, day: Date | string, config: ConfigTy
   const md = dayAdd.format('MM-DD');
   // 判断是不是当天
   const isToday = dayjs(day).isToday();
-  console.log('isToday-->', day);
   // 判断是不是明天
   const isTomorrow = dayjs(day).isTomorrow();
-  console.log(day);
   let result: DaysItemType = {
     id: dayAdd.format('YYYYMMDD'),
     pId: 0,

@@ -8,7 +8,6 @@ export function useTime(opts?: ConfigType) {
   let days = ref<DaysItemType[]>([]);
   if (opts && Object.keys(opts).length) {
     config = assign(config, opts);
-    console.log(config);
   }
   generate(config.interval);
   /**
