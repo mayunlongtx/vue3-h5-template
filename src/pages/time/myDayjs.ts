@@ -49,9 +49,10 @@ export function generateDays(dayAdd: Dayjs, day: Date | string, config: ConfigTy
 // 需要一个生成时间的方法
 export function generateTimes(isToday: boolean, dayAdd: Dayjs, config: ConfigType) {
   let result: ItemType[] = [];
-  let H: number = Number(dayAdd.format('H'));
-  if (!isToday && config.startHour) {
-    H = config.startHour || 8;
+  let H: number = config.startHour || 8;
+  // 如果是当天就需要将开始时间设置为当前时间往后累加的时间
+  if (isToday) {
+    H = Number(dayAdd.format('H'));
   }
   // 计算插值 判断需要生成多少的时间数组
   let maxH: number = 19;

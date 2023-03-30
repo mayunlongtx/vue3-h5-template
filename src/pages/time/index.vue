@@ -3,7 +3,7 @@
   import { useTime } from './time';
   const { days } = useTime({
     interval: 18,
-    startHour: 18,
+    // startHour: 18,
     endHour: 19,
   });
   const activeId = ref(1);
