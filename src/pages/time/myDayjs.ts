@@ -52,7 +52,7 @@ export function generateTimes(isToday: boolean, dayAdd: Dayjs, config: ConfigTyp
   let H: number = config.startHour || 8;
   // 如果是当天就需要将开始时间设置为当前时间往后累加的时间
   if (isToday) {
-    H = Number(dayAdd.format('H'));
+    H = Number(dayjs().format('H'));
   }
   // 计算插值 判断需要生成多少的时间数组
   let maxH: number = 19;

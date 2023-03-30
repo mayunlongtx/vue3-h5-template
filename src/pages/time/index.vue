@@ -2,8 +2,9 @@
   import { ref } from 'vue';
   import { useTime } from './time';
   const { days } = useTime({
-    interval: 18,
-    // startHour: 18,
+    interval: 1,
+    startTime: '2023-03-30',
+    startHour: 18,
     endHour: 19,
   });
   const activeId = ref(1);
