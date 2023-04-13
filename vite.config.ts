@@ -26,7 +26,7 @@ export default ({ mode, command }) => {
     base: VITE_PUBLIC_PATH,
     plugins: [
       vue(),
-      // legacy({ targets: ['chrome 52', 'chrome 53', 'not IE 11'] }),
+      legacy({ targets: ['chrome 52', 'chrome 53', 'not IE 11'] }),
       Unocss({
         /* options */
         presets: [presetUno(), presetAttributify(), presetIcons()],
@@ -35,6 +35,7 @@ export default ({ mode, command }) => {
     ],
     build: {
       outDir: 'build',
+      target: 'esnext',
       rollupOptions: {
         output: {
           manualChunks(id) {
