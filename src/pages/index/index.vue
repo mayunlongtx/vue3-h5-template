@@ -28,6 +28,12 @@
       class="bg-green-500 c-white border-none border-radius-15 rounded-lg text-2 w-10 py-1"
       >改变技能</button
     >
+    <van-cell title="时间：" value="内容">
+      <template #value>
+        <van-count-down :time="time" />
+      </template>
+    </van-cell>
+
     <!-- 动画 -->
     <!-- <Animation class="h-100" /> -->
   </div>
@@ -37,6 +43,7 @@
   import { storeToRefs } from 'pinia';
   import { showToast } from 'vant';
   import appStore from '@/store';
+  import { ref } from 'vue';
   const { count } = storeToRefs(appStore.useCounterStoreSetup);
   const { increment, doubleCount } = appStore.useCounterStoreSetup;
   console.log(appStore.roleStore.skill.skillState);
@@ -75,6 +82,14 @@
   }
   const operate = new Calculate();
   operate.subtraction();
+
+  const time = ref(0);
+  const nowDate = new Date().getTime();
+  const Y = new Date().getFullYear();
+  const M = new Date().getMonth() + 1;
+  const D = new Date().getDate();
+  const lastDate = new Date(`${Y}-${M}-${D} 18:00:00`).getTime();
+  time.value = lastDate - nowDate;
 </script>
 
 <style lang="scss" scoped>
