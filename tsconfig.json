@@ -25,7 +25,6 @@
     "skipLibCheck": true,
     "types": [
       "vite/client",
-      "unplugin-vue-define-options/macros-global" /* ... */
     ],
     "removeComments": true,
     "paths": {
