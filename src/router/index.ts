@@ -1,5 +1,5 @@
 // main.ts
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import { MenuTitle } from '@/enums/menu';
 import { composeRight } from '@/utils';
 import { getToken } from '@/utils/index';
@@ -56,7 +56,7 @@ async function setupRouter() {
   const routes = await generateRoutes();
 
   const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
     routes,
   });
   router.beforeEach((to: any, from: any, next) => {
